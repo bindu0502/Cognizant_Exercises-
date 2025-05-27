@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <video src="C:\Users\polis\OneDrive\Desktop\HTML\nature.mp4" controls oncanplay="document.getElementById('videoMsg').textContent='Video ready to play';"></video>
+    <p id="videoMsg"></p>
+
+    <script>
+        window.onbeforeunload = function () {
+            return "Are you sure you want to leave? Form may be unfinished.";
+    }
+    </script>
+
+</body>
+</html>

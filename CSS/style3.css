@@ -1,0 +1,31 @@
+/* Reset all margins and paddings Universal selector */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style all h2 elements Element selector */
+h2 {
+  font-size: 28px;
+  color: #444;
+}
+
+/* Style element with ID */
+#mainHeader {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Style all event cards using class */
+.eventCard {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+/* Grouped selector: style h3 and p */
+h3, p {
+  color: #333;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Registration</title>
+</head>
+<body>
+  <div class="form_container">
+    <form onsubmit="showConfirmation(); return false;" method="post">
+      <label>Name </label>
+      <input type="text" name="name" placeholder="Enter your name" required autofocus /><br><br>
+
+      <label>Email </label>
+      <input type="email" name="email" placeholder="Enter your email" required /><br><br>
+
+      <label>Date </label>
+      <input type="date" name="date" required /><br><br>
+
+      <label>Event Type </label>
+      <select name="eventtype" required>
+        <option value="" disabled selected>Select an event</option>
+        <option>Dance Fest</option>
+        <option>Blood Donation</option>
+        <option>Tree plantation</option>
+        <option>Cultural Night</option>
+        <option>Art Exhibition</option>
+        <option>Workshop</option>
+      </select><br><br>
+
+      <label>Feedback </label>
+      <textarea name="message" placeholder="Your Message"></textarea><br><br>
+
+      <button type="submit">Submit</button><br><br>
+    </form>
+    <p id="confirmation" style="color: green;"></p>
+  </div>
+
+  <script>
+    function showConfirmation() {
+      document.getElementById("confirmation").textContent = "Thanks for registering!";
+    }
+  </script>
+</body>
+</html>

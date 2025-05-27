@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #image {
+      width: 150px;
+      transition: width 0.3s ease;
+    }
+    .big {
+      width: 300px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Phone Number with onblur -->
+  <p>
+    Phone Number: <input type="text" id="phone" onblur="checkPhone()">
+    <span id="phoneMsg" class="error"></span>
+  </p>
+
+  <!-- Dropdown with onchange -->
+  <p>
+    Choose Event:
+    <select id="event" onchange="showFee()">
+      <option value="">--Select--</option>
+      <option value="100">Music - ₹100</option>
+      <option value="200">Dance - ₹200</option>
+    </select>
+    <span id="fee"></span>
+  </p>
+
+  <!-- Submit with onclick -->
+  <p>
+    <button onclick="showConfirmation()">Submit</button>
+    <span id="confirmation"></span>
+  </p>
+
+  <!-- Image with ondblclick -->
+  <p><img id="image" src="C:\Users\polis\OneDrive\Desktop\img.jpeg" ondblclick="enlarge()" alt="nature image"></p>
+  <!-- Textarea with key event -->
+  <p>
+    Feedback:<br>
+    <textarea id="feedback" onkeyup="countChars()" rows="4" cols="30"></textarea><br>
+    Characters: <span id="charCount">0</span>
+  </p>
+
+  <script>
+    function checkPhone() {
+      const phone = document.getElementById("phone").value;
+      const msg = document.getElementById("phoneMsg");
+      msg.textContent = /^\d{10}$/.test(phone) ? "" : "Enter 10-digit number";
+    }
+
+    function showFee() {
+      const fee = document.getElementById("event").value;
+      document.getElementById("fee").textContent = fee ? "Fee: ₹" + fee : "";
+    }
+
+    function showConfirmation() {
+      document.getElementById("confirmation").textContent = "Submitted!";
+    }
+
+    function enlarge() {
+      const img = document.getElementById("image");
+      img.classList.toggle("big");
+    }
+
+    function countChars() {
+      const text = document.getElementById("feedback").value;
+      document.getElementById("charCount").textContent = text.length;
+    }
+  </script>
+
+</body>
+</html>

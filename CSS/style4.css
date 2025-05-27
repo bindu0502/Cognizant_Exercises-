@@ -1,0 +1,25 @@
+/* Text color using HEX */
+.eventCard h3 {
+  color: #2E7D32;
+}
+
+/* Background using RGBA */
+.eventCard {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Fallback background color and image */
+body {
+  background-color: #280d42;
+  background-image: url(img.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Gradient background for section headers */
+.section-header {
+  background: linear-gradient(to right, #4caf50, #81c784);
+  color: white;
+  padding: 10px;
+}

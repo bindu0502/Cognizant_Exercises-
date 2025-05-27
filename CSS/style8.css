@@ -1,0 +1,21 @@
+/* Event card spacing */
+.eventCard {
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  outline: none;
+}
+
+/* Highlight form fields on select */
+input:focus {
+  outline: 2px solid #4caf50;
+}
+
+/* Visibility vs Display */
+.hidden-box {
+  visibility: hidden; /* Takes up space */
+}
+
+.none-box {
+  display: none; /* Removed from layout */
+}

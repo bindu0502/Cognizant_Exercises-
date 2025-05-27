@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <h2>Select your preferred event type:</h2>
+
+  <select id="eventTypeSelect">
+    <option value="">-- Select Event Type --</option>
+    <option value="conference">Conference</option>
+    <option value="workshop">Workshop</option>
+    <option value="webinar">Webinar</option>
+    <option value="meetup">Meetup</option>
+  </select><br><br>
+
+  <button id="clearPref">Clear Preferences</button>
+
+  <script>
+    const select = document.getElementById('eventTypeSelect');
+    const clearBtn = document.getElementById('clearPref');
+
+    // On page load, check localStorage and pre-select event type if saved
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedEventType = localStorage.getItem('preferredEventType');
+      if (savedEventType) {
+        select.value = savedEventType;
+      }
+    });
+
+    // Save selection to localStorage on change
+    select.addEventListener('change', () => {
+      if (select.value) {
+        localStorage.setItem('preferredEventType', select.value);
+        // Optionally also save something in sessionStorage for demonstration
+        sessionStorage.setItem('sessionEvent', select.value);
+      } else {
+        // If user selects the empty option, remove saved preference
+        localStorage.removeItem('preferredEventType');
+        sessionStorage.removeItem('sessionEvent');
+      }
+    });
+
+    // Clear preferences button clears both storages and resets selection
+    clearBtn.addEventListener('click', () => {
+      localStorage.clear();
+      sessionStorage.clear();
+      select.value = '';
+      alert('Preferences cleared!');
+    });
+  </script>
+</body>
+</html>
